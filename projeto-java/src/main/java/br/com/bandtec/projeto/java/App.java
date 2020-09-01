@@ -5,6 +5,10 @@
  */
 package br.com.bandtec.projeto.java;
 
+import java.awt.Color;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Aluno
@@ -31,32 +35,149 @@ public class App extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        lblTitle = new javax.swing.JLabel();
+        lblCampo1 = new javax.swing.JLabel();
+        tfCampo1 = new javax.swing.JTextField();
+        tfCampo2 = new javax.swing.JTextField();
+        lblCampo2 = new javax.swing.JLabel();
+        tfCampo3 = new javax.swing.JTextField();
+        lblCampo3 = new javax.swing.JLabel();
+        lblImgApp = new javax.swing.JLabel();
+        btnCalcular = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(32767, 32767));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
-        jLabel1.setText("Banido");
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        lblTitle.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(38, 38, 38));
+        lblTitle.setText("Contrate nossos serviços :)");
+
+        lblCampo1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        lblCampo1.setForeground(new java.awt.Color(63, 63, 63));
+        lblCampo1.setText("Campo 1");
+
+        tfCampo1.setForeground(new java.awt.Color(177, 177, 177));
+        tfCampo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfCampo1ActionPerformed(evt);
+            }
+        });
+
+        tfCampo2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfCampo2ActionPerformed(evt);
+            }
+        });
+
+        lblCampo2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        lblCampo2.setForeground(new java.awt.Color(63, 63, 63));
+        lblCampo2.setText("Campo 2");
+
+        tfCampo3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfCampo3ActionPerformed(evt);
+            }
+        });
+
+        lblCampo3.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        lblCampo3.setForeground(new java.awt.Color(63, 63, 63));
+        lblCampo3.setText("Campo 3");
+
+        btnCalcular.setForeground(new java.awt.Color(255, 255, 255));
+        btnCalcular.setText("Calcular");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(lblCampo1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tfCampo1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblCampo2, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tfCampo2, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblCampo3, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tfCampo3, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCalcular, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE))
+                .addGap(57, 57, 57)
+                .addComponent(lblImgApp, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblTitle)
+                        .addGap(29, 29, 29)
+                        .addComponent(lblCampo1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfCampo1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(4, 4, 4)
+                        .addComponent(lblCampo2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfCampo2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblCampo3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfCampo3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(btnCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblImgApp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(120, 120, 120)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(119, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(101, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tfCampo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCampo1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfCampo1ActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        tfCampo1.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.GRAY));
+        tfCampo2.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.GRAY));
+        tfCampo3.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.GRAY));
+        
+         ImageIcon icon = new ImageIcon("src/img/imgApp.png");
+           icon.setImage(icon.getImage().getScaledInstance(
+                lblImgApp.getWidth(), 
+                lblImgApp.getHeight(), 
+                1)
+           );
+           lblImgApp.setIcon(icon); 
+    }//GEN-LAST:event_formWindowOpened
+
+    private void tfCampo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCampo2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfCampo2ActionPerformed
+
+    private void tfCampo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCampo3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfCampo3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -94,6 +215,15 @@ public class App extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnCalcular;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblCampo1;
+    private javax.swing.JLabel lblCampo2;
+    private javax.swing.JLabel lblCampo3;
+    private javax.swing.JLabel lblImgApp;
+    private javax.swing.JLabel lblTitle;
+    private javax.swing.JTextField tfCampo1;
+    private javax.swing.JTextField tfCampo2;
+    private javax.swing.JTextField tfCampo3;
     // End of variables declaration//GEN-END:variables
 }
