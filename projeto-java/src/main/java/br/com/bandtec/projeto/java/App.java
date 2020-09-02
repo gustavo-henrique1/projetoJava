@@ -37,14 +37,20 @@ public class App extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         lblTitle = new javax.swing.JLabel();
-        lblCampo1 = new javax.swing.JLabel();
-        tfCampo1 = new javax.swing.JTextField();
-        tfCampo2 = new javax.swing.JTextField();
-        lblCampo2 = new javax.swing.JLabel();
-        tfCampo3 = new javax.swing.JTextField();
-        lblCampo3 = new javax.swing.JLabel();
+        lblCpu = new javax.swing.JLabel();
+        lblDisco = new javax.swing.JLabel();
+        lblMemoria = new javax.swing.JLabel();
         lblImgApp = new javax.swing.JLabel();
-        btnCalcular = new javax.swing.JButton();
+        btnGerarDados = new javax.swing.JButton();
+        pgbMemoria = new javax.swing.JProgressBar();
+        pgbCpu = new javax.swing.JProgressBar();
+        pgbDisco = new javax.swing.JProgressBar();
+        lblMinCpu = new javax.swing.JLabel();
+        lblMaxCpu = new javax.swing.JLabel();
+        lblMinDisco = new javax.swing.JLabel();
+        lblMaxDisco = new javax.swing.JLabel();
+        lblMinMemoria = new javax.swing.JLabel();
+        lblMaxMemoria = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(32767, 32767));
@@ -58,41 +64,57 @@ public class App extends javax.swing.JFrame {
 
         lblTitle.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblTitle.setForeground(new java.awt.Color(38, 38, 38));
-        lblTitle.setText("Contrate nossos serviços :)");
+        lblTitle.setText("Monitoramento :)");
 
-        lblCampo1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        lblCampo1.setForeground(new java.awt.Color(63, 63, 63));
-        lblCampo1.setText("Campo 1");
+        lblCpu.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblCpu.setForeground(new java.awt.Color(63, 63, 63));
+        lblCpu.setText("CPU");
 
-        tfCampo1.setForeground(new java.awt.Color(177, 177, 177));
-        tfCampo1.addActionListener(new java.awt.event.ActionListener() {
+        lblDisco.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblDisco.setForeground(new java.awt.Color(63, 63, 63));
+        lblDisco.setText("Disco");
+
+        lblMemoria.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblMemoria.setForeground(new java.awt.Color(63, 63, 63));
+        lblMemoria.setText("Memória");
+
+        btnGerarDados.setForeground(new java.awt.Color(102, 102, 102));
+        btnGerarDados.setText("GERAR DADOS");
+        btnGerarDados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfCampo1ActionPerformed(evt);
+                btnGerarDadosActionPerformed(evt);
             }
         });
 
-        tfCampo2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfCampo2ActionPerformed(evt);
-            }
-        });
+        pgbMemoria.setBackground(new java.awt.Color(255, 255, 255));
+        pgbMemoria.setForeground(new java.awt.Color(51, 51, 51));
+        pgbMemoria.setStringPainted(true);
 
-        lblCampo2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        lblCampo2.setForeground(new java.awt.Color(63, 63, 63));
-        lblCampo2.setText("Campo 2");
+        pgbCpu.setBackground(new java.awt.Color(255, 255, 255));
+        pgbCpu.setForeground(new java.awt.Color(51, 51, 51));
+        pgbCpu.setStringPainted(true);
 
-        tfCampo3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfCampo3ActionPerformed(evt);
-            }
-        });
+        pgbDisco.setBackground(new java.awt.Color(255, 255, 255));
+        pgbDisco.setForeground(new java.awt.Color(51, 51, 51));
+        pgbDisco.setStringPainted(true);
 
-        lblCampo3.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        lblCampo3.setForeground(new java.awt.Color(63, 63, 63));
-        lblCampo3.setText("Campo 3");
+        lblMinCpu.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblMinCpu.setText("0%");
 
-        btnCalcular.setForeground(new java.awt.Color(255, 255, 255));
-        btnCalcular.setText("Calcular");
+        lblMaxCpu.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblMaxCpu.setText("100%");
+
+        lblMinDisco.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblMinDisco.setText("0%");
+
+        lblMaxDisco.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblMaxDisco.setText("100%");
+
+        lblMinMemoria.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblMinMemoria.setText("0%");
+
+        lblMaxMemoria.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblMaxMemoria.setText("100%");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -100,49 +122,73 @@ public class App extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(lblCampo1, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tfCampo1, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblCampo2, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tfCampo2, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblCampo3, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tfCampo3, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCalcular, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE))
-                .addGap(57, 57, 57)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblMinMemoria)
+                        .addGap(101, 101, 101)
+                        .addComponent(lblMemoria)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                        .addComponent(lblMaxMemoria))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblMinDisco)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblDisco)
+                        .addGap(100, 100, 100)
+                        .addComponent(lblMaxDisco))
+                    .addComponent(pgbDisco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGerarDados, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pgbCpu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pgbMemoria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblMinCpu)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblCpu)
+                        .addGap(104, 104, 104)
+                        .addComponent(lblMaxCpu)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addComponent(lblImgApp, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblImgApp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(lblTitle)
-                        .addGap(29, 29, 29)
-                        .addComponent(lblCampo1)
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblCpu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblMinCpu)
+                            .addComponent(lblMaxCpu))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfCampo1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(4, 4, 4)
-                        .addComponent(lblCampo2)
+                        .addComponent(pgbCpu, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblDisco, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblMinDisco)
+                            .addComponent(lblMaxDisco))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfCampo2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pgbDisco, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblMemoria)
+                            .addComponent(lblMinMemoria)
+                            .addComponent(lblMaxMemoria))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblCampo3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfCampo3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(btnCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(lblImgApp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(49, Short.MAX_VALUE))
+                        .addComponent(pgbMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnGerarDados, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(33, 33, 33))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,17 +198,13 @@ public class App extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tfCampo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCampo1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfCampo1ActionPerformed
-
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-        tfCampo1.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.GRAY));
-        tfCampo2.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.GRAY));
-        tfCampo3.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.GRAY));
+//        tfCampo1.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.GRAY));;;
+//        tfCampo2.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.GRAY));
+//        tfCampo3.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.GRAY));
         
-         ImageIcon icon = new ImageIcon("src/img/imgApp.png");
+         ImageIcon icon = new ImageIcon("src/img/imgApp.jpg");
            icon.setImage(icon.getImage().getScaledInstance(
                 lblImgApp.getWidth(), 
                 lblImgApp.getHeight(), 
@@ -171,13 +213,15 @@ public class App extends javax.swing.JFrame {
            lblImgApp.setIcon(icon); 
     }//GEN-LAST:event_formWindowOpened
 
-    private void tfCampo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCampo2ActionPerformed
+    private void btnGerarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarDadosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfCampo2ActionPerformed
-
-    private void tfCampo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCampo3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfCampo3ActionPerformed
+        pgbCpu.setMaximum(10);
+        pgbCpu.setValue(3);
+        pgbDisco.setMaximum(10);
+        pgbDisco.setValue(8);
+        pgbMemoria.setMaximum(10);
+        pgbMemoria.setValue(5);
+    }//GEN-LAST:event_btnGerarDadosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,15 +259,21 @@ public class App extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCalcular;
+    private javax.swing.JButton btnGerarDados;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lblCampo1;
-    private javax.swing.JLabel lblCampo2;
-    private javax.swing.JLabel lblCampo3;
+    private javax.swing.JLabel lblCpu;
+    private javax.swing.JLabel lblDisco;
     private javax.swing.JLabel lblImgApp;
+    private javax.swing.JLabel lblMaxCpu;
+    private javax.swing.JLabel lblMaxDisco;
+    private javax.swing.JLabel lblMaxMemoria;
+    private javax.swing.JLabel lblMemoria;
+    private javax.swing.JLabel lblMinCpu;
+    private javax.swing.JLabel lblMinDisco;
+    private javax.swing.JLabel lblMinMemoria;
     private javax.swing.JLabel lblTitle;
-    private javax.swing.JTextField tfCampo1;
-    private javax.swing.JTextField tfCampo2;
-    private javax.swing.JTextField tfCampo3;
+    private javax.swing.JProgressBar pgbCpu;
+    private javax.swing.JProgressBar pgbDisco;
+    private javax.swing.JProgressBar pgbMemoria;
     // End of variables declaration//GEN-END:variables
 }
