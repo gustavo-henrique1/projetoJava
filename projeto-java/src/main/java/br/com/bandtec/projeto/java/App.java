@@ -114,13 +114,13 @@ public class App extends javax.swing.JFrame {
         pgbDisco.setStringPainted(true);
 
         lblMinCpu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblMinCpu.setText(" 0");
+        lblMinCpu.setText(" 0%");
 
         lblMaxCpu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblMaxCpu.setText("0");
+        lblMaxCpu.setText("0%");
 
         lblMediaCpu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblMediaCpu.setText(" 0");
+        lblMediaCpu.setText(" 0%");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
@@ -139,13 +139,13 @@ public class App extends javax.swing.JFrame {
         jLabel4.setText("Mínimo:");
 
         lblMinDisco.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblMinDisco.setText(" 0");
+        lblMinDisco.setText(" 0%");
 
         lblMediaDisco.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblMediaDisco.setText(" 0");
+        lblMediaDisco.setText(" 0%");
 
         lblMaxDisco.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblMaxDisco.setText("0");
+        lblMaxDisco.setText("0%");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(51, 51, 51));
@@ -160,21 +160,21 @@ public class App extends javax.swing.JFrame {
         jLabel7.setText("Mínimo:");
 
         lblMinMemoria.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblMinMemoria.setText(" 0");
+        lblMinMemoria.setText(" 0GB");
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(51, 51, 51));
         jLabel8.setText("Média:");
 
         lblMediaMemoria.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblMediaMemoria.setText(" 0");
+        lblMediaMemoria.setText(" 0GB");
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(51, 51, 51));
         jLabel9.setText("Máximo: ");
 
         lblMaxMemoria.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblMaxMemoria.setText("0");
+        lblMaxMemoria.setText("0GB");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -186,8 +186,8 @@ public class App extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblMinDisco, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44)
+                        .addComponent(lblMinDisco, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblMediaDisco, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -199,12 +199,12 @@ public class App extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(lblMinMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(44, 44, 44)
+                            .addComponent(lblMinMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(27, 27, 27)
                             .addComponent(jLabel8)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(lblMediaMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblMediaMemoria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGap(18, 18, 18)
                             .addComponent(jLabel9)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(lblMaxMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -217,8 +217,8 @@ public class App extends javax.swing.JFrame {
                             .addGap(1, 1, 1)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(lblMinCpu, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(44, 44, 44)
+                            .addComponent(lblMinCpu, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(32, 32, 32)
                             .addComponent(jLabel2)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(lblMediaCpu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
