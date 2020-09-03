@@ -8,13 +8,15 @@ package br.com.bandtec.projeto.java;
 import java.awt.Color;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
-
 /**
  *
  * @author Aluno
  */
 public class App extends javax.swing.JFrame {
 
+    Randomico randomico01 = new Randomico();
+    Randomico randomico02 = new Randomico();
+    Randomico randomico03 = new Randomico();
     /**
      * Creates new form App
      */
@@ -47,9 +49,21 @@ public class App extends javax.swing.JFrame {
         pgbDisco = new javax.swing.JProgressBar();
         lblMinCpu = new javax.swing.JLabel();
         lblMaxCpu = new javax.swing.JLabel();
+        lblMediaCpu = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         lblMinDisco = new javax.swing.JLabel();
+        lblMediaDisco = new javax.swing.JLabel();
         lblMaxDisco = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         lblMinMemoria = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        lblMediaMemoria = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         lblMaxMemoria = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -62,24 +76,25 @@ public class App extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        lblTitle.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Segoe UI", 0, 28)); // NOI18N
         lblTitle.setForeground(new java.awt.Color(38, 38, 38));
-        lblTitle.setText("Monitoramento :)");
+        lblTitle.setText("Área de Monitoramento");
 
-        lblCpu.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblCpu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblCpu.setForeground(new java.awt.Color(63, 63, 63));
         lblCpu.setText("CPU");
 
-        lblDisco.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblDisco.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblDisco.setForeground(new java.awt.Color(63, 63, 63));
         lblDisco.setText("Disco");
 
-        lblMemoria.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblMemoria.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblMemoria.setForeground(new java.awt.Color(63, 63, 63));
         lblMemoria.setText("Memória");
 
-        btnGerarDados.setForeground(new java.awt.Color(102, 102, 102));
-        btnGerarDados.setText("GERAR DADOS");
+        btnGerarDados.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnGerarDados.setForeground(new java.awt.Color(51, 51, 51));
+        btnGerarDados.setText("MONITORAR");
         btnGerarDados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGerarDadosActionPerformed(evt);
@@ -98,23 +113,68 @@ public class App extends javax.swing.JFrame {
         pgbDisco.setForeground(new java.awt.Color(51, 51, 51));
         pgbDisco.setStringPainted(true);
 
-        lblMinCpu.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblMinCpu.setText("0%");
+        lblMinCpu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblMinCpu.setText(" 0");
 
-        lblMaxCpu.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblMaxCpu.setText("100%");
+        lblMaxCpu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblMaxCpu.setText("0");
 
-        lblMinDisco.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblMinDisco.setText("0%");
+        lblMediaCpu.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblMediaCpu.setText(" 0");
 
-        lblMaxDisco.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblMaxDisco.setText("100%");
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel1.setText("Mínimo:");
 
-        lblMinMemoria.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblMinMemoria.setText("0%");
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel2.setText("Média:");
 
-        lblMaxMemoria.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblMaxMemoria.setText("100%");
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel3.setText("Máximo: ");
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel4.setText("Mínimo:");
+
+        lblMinDisco.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblMinDisco.setText(" 0");
+
+        lblMediaDisco.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblMediaDisco.setText(" 0");
+
+        lblMaxDisco.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblMaxDisco.setText("0");
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel5.setText("Média:");
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel6.setText("Máximo: ");
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel7.setText("Mínimo:");
+
+        lblMinMemoria.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblMinMemoria.setText(" 0");
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel8.setText("Média:");
+
+        lblMediaMemoria.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblMediaMemoria.setText(" 0");
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel9.setText("Máximo: ");
+
+        lblMaxMemoria.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblMaxMemoria.setText("0");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -122,66 +182,108 @@ public class App extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblMinMemoria)
-                        .addGap(101, 101, 101)
-                        .addComponent(lblMemoria)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
-                        .addComponent(lblMaxMemoria))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblMinDisco)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblDisco)
-                        .addGap(100, 100, 100)
-                        .addComponent(lblMaxDisco))
-                    .addComponent(pgbDisco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnGerarDados, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pgbCpu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pgbMemoria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblMinCpu)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblCpu)
-                        .addGap(104, 104, 104)
-                        .addComponent(lblMaxCpu)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblMinDisco, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblMediaDisco, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblMaxDisco, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(lblMinMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(44, 44, 44)
+                            .addComponent(jLabel8)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(lblMediaMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(38, 38, 38)
+                            .addComponent(jLabel9)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(lblMaxMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(pgbDisco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnGerarDados, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                            .addComponent(pgbCpu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pgbMemoria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblMinCpu, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(44, 44, 44)
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblMediaCpu, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblMaxCpu, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblDisco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblCpu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblMemoria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
                 .addComponent(lblImgApp, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblImgApp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblTitle)
+                .addGap(22, 22, 22)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(lblTitle)
-                        .addGap(26, 26, 26)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblCpu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblMinCpu)
-                            .addComponent(lblMaxCpu))
+                        .addComponent(lblCpu)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblMinCpu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblMediaCpu, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblMaxCpu)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(pgbCpu, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblDisco, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblMinDisco)
-                            .addComponent(lblMaxDisco))
+                        .addGap(19, 19, 19)
+                        .addComponent(lblDisco, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblMinDisco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblMediaDisco, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblMaxDisco)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(9, 9, 9)
                         .addComponent(pgbDisco, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblMemoria)
-                            .addComponent(lblMinMemoria)
-                            .addComponent(lblMaxMemoria))
+                        .addComponent(lblMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblMinMemoria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblMediaMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblMaxMemoria)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(8, 8, 8)
                         .addComponent(pgbMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnGerarDados, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(33, 33, 33))
+                        .addComponent(btnGerarDados, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblImgApp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(43, 43, 43))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -192,7 +294,7 @@ public class App extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -204,23 +306,34 @@ public class App extends javax.swing.JFrame {
 //        tfCampo2.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.GRAY));
 //        tfCampo3.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.GRAY));
         
-         ImageIcon icon = new ImageIcon("src/img/imgApp.jpg");
-           icon.setImage(icon.getImage().getScaledInstance(
-                lblImgApp.getWidth(), 
-                lblImgApp.getHeight(), 
-                1)
-           );
-           lblImgApp.setIcon(icon); 
+        ImageIcon icon = new ImageIcon("src/img/imgApp.jpg");
+          icon.setImage(icon.getImage().getScaledInstance(
+            lblImgApp.getWidth(), 
+            lblImgApp.getHeight(), 
+            1)
+        );
+        lblImgApp.setIcon(icon); 
     }//GEN-LAST:event_formWindowOpened
 
     private void btnGerarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarDadosActionPerformed
         // TODO add your handling code here:
-        pgbCpu.setMaximum(10);
-        pgbCpu.setValue(3);
-        pgbDisco.setMaximum(10);
-        pgbDisco.setValue(8);
-        pgbMemoria.setMaximum(10);
-        pgbMemoria.setValue(5);
+        randomico01.randomizar();
+        pgbCpu.setValue(randomico01.numeroRandom);
+        lblMaxCpu.setText(randomico01.max.toString());
+        lblMinCpu.setText(randomico01.min.toString());
+        lblMediaCpu.setText(randomico01.media.toString());
+
+        randomico02.randomizar();
+        pgbDisco.setValue(randomico02.numeroRandom);
+        lblMaxDisco.setText(randomico02.max.toString());
+        lblMinDisco.setText(randomico02.min.toString());
+        lblMediaDisco.setText(randomico02.media.toString());
+
+        randomico03.randomizar();
+        pgbMemoria.setValue(randomico03.numeroRandom);
+        lblMaxMemoria.setText(randomico03.max.toString());
+        lblMinMemoria.setText(randomico03.min.toString());
+        lblMediaMemoria.setText(randomico03.media.toString());
     }//GEN-LAST:event_btnGerarDadosActionPerformed
 
     /**
@@ -260,6 +373,15 @@ public class App extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGerarDados;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblCpu;
     private javax.swing.JLabel lblDisco;
@@ -267,6 +389,9 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JLabel lblMaxCpu;
     private javax.swing.JLabel lblMaxDisco;
     private javax.swing.JLabel lblMaxMemoria;
+    private javax.swing.JLabel lblMediaCpu;
+    private javax.swing.JLabel lblMediaDisco;
+    private javax.swing.JLabel lblMediaMemoria;
     private javax.swing.JLabel lblMemoria;
     private javax.swing.JLabel lblMinCpu;
     private javax.swing.JLabel lblMinDisco;
@@ -276,4 +401,5 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JProgressBar pgbDisco;
     private javax.swing.JProgressBar pgbMemoria;
     // End of variables declaration//GEN-END:variables
+
 }
