@@ -18,8 +18,9 @@ public class Randomico {
     Integer total = 0;
     Integer media = 0;
     Integer count = 0;
+    Integer maxRandom = 100;
     void randomizar(){
-        numeroRandom = ThreadLocalRandom.current().nextInt(0,100);
+        numeroRandom = ThreadLocalRandom.current().nextInt(0, maxRandom + 1);
         
         if(numeroRandom > max){
             max = numeroRandom;
