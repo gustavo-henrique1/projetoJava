@@ -14,7 +14,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Randomico {
     Integer numeroRandom = 0;
     Integer max = 0;
-    Integer min = 100;
+    Integer min = 230;
     Integer total = 0;
     Integer media = 0;
     Integer count = 0;
